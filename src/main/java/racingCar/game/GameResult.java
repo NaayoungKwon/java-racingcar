@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameResult {
-  List<String> winners;
-  List<String> roundResults;
+  private List<String> winners;
+  private List<String> roundResults;
 
   public GameResult(){
     this.winners = new ArrayList<>();
@@ -20,7 +20,7 @@ public class GameResult {
     return roundResults;
   }
 
-  public void addRoundResult(String result){
+  public void addRoundResults(String result){
     roundResults.add(result);
   }
 

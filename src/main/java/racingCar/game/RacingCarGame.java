@@ -25,8 +25,8 @@ public class RacingCarGame {
     GameResult gameResult = new GameResult();
     for (int i = 0; i < round; i++) {
       playGame();
-      gameResult.addRoundResult(getGameResult());
     }
+    gameResult.addRoundResults(getGameResults());
     gameResult.setWinners(findWinners());
     return gameResult;
   }
@@ -37,7 +37,7 @@ public class RacingCarGame {
     }
   }
 
-  private String getGameResult() {
+  private String getGameResults() {
     StringBuilder sb = new StringBuilder();
     for (Car car : cars) {
       sb.append(car.getName()).append(" : ").append(car.getMovedPath()).append("\n");
