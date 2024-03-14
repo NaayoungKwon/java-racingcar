@@ -14,7 +14,7 @@ public class CarTest {
   Car car;
   @BeforeEach
   void setUp() {
-    IntGenerator intGenerator = new RandomGenerator();
+    IntGenerator intGenerator = new RandomGenerator(10);
     car = new Car("hoi", intGenerator);
   }
 
@@ -35,7 +35,7 @@ public class CarTest {
   @DisplayName("차 인스턴스를 생성할 때 이름을 지정한다")
   void getCarName(){
     String carName = "hadi";
-    Car hadiCar = new Car(carName, new RandomGenerator());
+    Car hadiCar = new Car(carName, new RandomGenerator(10));
 
     assertThat(hadiCar.getName()).isEqualTo(carName);
   }

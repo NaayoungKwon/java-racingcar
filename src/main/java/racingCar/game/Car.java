@@ -15,6 +15,13 @@ public class Car {
     this.intGenerator = intGenerator;
   }
 
+  public Car(String name, int position) {
+    verifyCarName(name);
+    this.name = name;
+    this.position = position;
+    this.intGenerator = null;
+  }
+
   public String getName() {
     return name;
   }
@@ -34,10 +41,27 @@ public class Car {
     }
   }
 
+  public void move(boolean canMove) {
+    if (canMove) {
+      position++;
+    }
+  }
+
+//  public void move() {
+//    position++;
+//  }
+
   private void verifyCarName(String carName) {
     int maxCarNameLength = 5;
     if (carName != null && carName.length() > maxCarNameLength) {
       throw new RuntimeException(String.format("차의 이름은 %d자를 초과할 수 없습니다.", maxCarNameLength));
     }
+  }
+
+  public int max(int other){ // 이런식으로 해서 getter를 최대한 없앨 수 있다.
+    if (this.position > other){
+      return this.position;
+    }
+    return other;
   }
 }
